@@ -203,7 +203,8 @@
         <p>© 2025 TheUSDOX</p>
         <p>
             <a href="https://theusdox.com">Website</a> ·
-            <a href="https://github.com/VKATHUSHAN">GitHub</a> ·
+            <a href="https://t.me/theusdox">Telegram</a> ·
+            <a href="https://github.com/theusdox">GitHub</a> ·
             <a href="https://x.com/TheUSDOXs">X</a> ·
             <a href="mailto:hello@theusdox.com">Contact</a>
         </p>
@@ -219,21 +220,39 @@
         let provider, signer, contract;
 
         async function init() {
-            provider = new ethers.BrowserProvider(window.ethereum || ethers.getDefaultProvider());
-            contract = new ethers.Contract(CONTRACT, ABI, provider);
+            try {
+                if (window.ethereum) {
+                    provider = new ethers.BrowserProvider(window.ethereum);
+                } else {
+                    provider = ethers.getDefaultProvider();
+                }
+                contract = new ethers.Contract(CONTRACT, ABI, provider);
 
-            const supply = await contract.totalSupply();
-            document.getElementById("supply").innerText =
-                Number(ethers.formatUnits(supply, 6)).toLocaleString() + " TWUSD";
+                const supply = await contract.totalSupply();
+                document.getElementById("supply").innerText =
+                    Number(ethers.formatUnits(supply, 6)).toLocaleString() + " TWUSD";
+            } catch (error) {
+                console.error("Error initializing:", error);
+                document.getElementById("supply").innerText = "Error loading supply";
+            }
         }
 
         async function connect() {
-            await window.ethereum.request({method: "eth_requestAccounts"});
-            signer = await provider.getSigner();
-            const user = await signer.getAddress();
-            const bal = await contract.balanceOf(user);
-            document.getElementById("balance").innerText =
-                Number(ethers.formatUnits(bal, 6)).toLocaleString() + " TWUSD";
+            try {
+                if (!window.ethereum) {
+                    alert("Please install MetaMask or another Web3 wallet");
+                    return;
+                }
+                await window.ethereum.request({method: "eth_requestAccounts"});
+                signer = await provider.getSigner();
+                const user = await signer.getAddress();
+                const bal = await contract.balanceOf(user);
+                document.getElementById("balance").innerText =
+                    Number(ethers.formatUnits(bal, 6)).toLocaleString() + " TWUSD";
+            } catch (error) {
+                console.error("Error connecting wallet:", error);
+                alert("Failed to connect wallet");
+            }
         }
 
         init();
