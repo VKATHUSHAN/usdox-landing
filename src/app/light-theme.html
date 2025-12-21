@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>USDOX Ecosystem — Light Theme</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="USDOX Ecosystem - Light theme variant" />
+    <script src="https://cdn.jsdelivr.net/npm/ethers@6.10.0/dist/ethers.umd.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Inter, system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
+            color: #1e293b;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        a {
+            color: #2563eb;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #1d4ed8;
+        }
+
+        section {
+            padding: 80px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin: 20px 0;
+            background: linear-gradient(to right, #2563eb, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #0f172a;
+        }
+
+        .hero {
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero img {
+            height: 80px;
+            margin: 15px;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            margin: 10px;
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            border-radius: 10px;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(37, 99, 235, 0.5);
+        }
+
+        .btn-secondary {
+            background: #ffffff;
+            color: #2563eb;
+            border: 2px solid #2563eb;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 28px;
+            margin-top: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 14px 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        td:first-child {
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.2);
+            transform: translateY(-4px);
+        }
+
+        footer {
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid #e2e8f0;
+            color: #64748b;
+            background: rgba(255, 255, 255, 0.8);
+            margin-top: 80px;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <img src="/theusdox-usdo-logo.png" alt="TheUSDOX Logo">
+        <h1>USDOX Ecosystem</h1>
+        <p style="font-size: 1.3rem; color: #475569;">Transparent Digital Dollar Infrastructure on Ethereum</p>
+        <img src="/TWUSD-logo.png" alt="TWUSD Logo">
+
+        <div>
+            <a class="btn" href="https://etherscan.io/token/0x7BeB51807E3c8BdB10A2868bD51c2D9E1764925D" target="_blank">View on Etherscan</a>
+            <a class="btn btn-secondary" href="#info">Learn More</a>
+        </div>
+    </section>
+
+    <section id="info">
+        <h2 style="text-align: center;">TWUSD — TheUSDOX Wrapped Dollar</h2>
+        <p style="text-align: center; color: #475569; margin-bottom: 30px;">
+            ERC-20 wrapped dollar asset for DeFi integrations and on-chain settlement
+        </p>
+
+        <div class="card">
+            <table>
+                <tr><td>Token Name</td><td>TheUSDOX Wrapped Dollar</td></tr>
+                <tr><td>Symbol</td><td>TWUSD</td></tr>
+                <tr><td>Network</td><td>Ethereum Mainnet</td></tr>
+                <tr><td>Standard</td><td>ERC-20</td></tr>
+                <tr><td>Decimals</td><td>6</td></tr>
+                <tr><td>Total Supply</td><td id="supply">Loading…</td></tr>
+                <tr><td>Contract</td><td>0x7BeB51807E3c8BdB10A2868bD51c2D9E1764925D</td></tr>
+            </table>
+        </div>
+    </section>
+
+    <section>
+        <h2 style="text-align: center;">Transparency & Verifiability</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div style="font-size: 2rem; margin-bottom: 15px;">📜</div>
+                <h3>Open Source</h3>
+                <p style="color: #64748b;">Public smart contract source code</p>
+            </div>
+            <div class="feature-card">
+                <div style="font-size: 2rem; margin-bottom: 15px;">👁️</div>
+                <h3>Observable Supply</h3>
+                <p style="color: #64748b;">Fully observable on Ethereum</p>
+            </div>
+            <div class="feature-card">
+                <div style="font-size: 2rem; margin-bottom: 15px;">🛡️</div>
+                <h3>No Hidden Mechanisms</h3>
+                <p style="color: #64748b;">No hidden minting</p>
+            </div>
+            <div class="feature-card">
+                <div style="font-size: 2rem; margin-bottom: 15px;">✅</div>
+                <h3>Standard Compliant</h3>
+                <p style="color: #64748b;">Standard ERC-20 behavior</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h3>Legal & Branding Disclosure</h3>
+        <p style="max-width: 700px; margin: 20px auto; font-size: 0.9rem;">
+            TWUSD is not affiliated with Tether, USDT, Circle, or any third-party stablecoin issuer.
+        </p>
+        <p>
+            <a href="https://theusdox.com">Website</a> ·
+            <a href="https://t.me/theusdox">Telegram</a> ·
+            <a href="https://github.com/theusdox">GitHub</a> ·
+            <a href="https://x.com/TheUSDOXs">X</a> ·
+            <a href="mailto:hello@theusdox.com">Contact</a>
+        </p>
+        <p style="margin-top: 20px;">© 2025 TheUSDOX</p>
+    </footer>
+
+    <script>
+        const CONTRACT = "0x7BeB51807E3c8BdB10A2868bD51c2D9E1764925D";
+        const ABI = ["function totalSupply() view returns (uint256)"];
+
+        async function init() {
+            try {
+                const provider = ethers.getDefaultProvider();
+                const contract = new ethers.Contract(CONTRACT, ABI, provider);
+                const supply = await contract.totalSupply();
+                document.getElementById("supply").innerText =
+                    Number(ethers.formatUnits(supply, 6)).toLocaleString() + " TWUSD";
+            } catch (error) {
+                console.error("Error:", error);
+                document.getElementById("supply").innerText = "Error loading";
+            }
+        }
+
+        init();
+    </script>
+</body>
+</html>
