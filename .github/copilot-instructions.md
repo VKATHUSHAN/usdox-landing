@@ -1,13 +1,21 @@
 # USDOX Landing Page - AI Coding Instructions
 
+## ⚡ Inline Chat & Auto-Fix Mode
+When Copilot detects issues or is asked to fix problems:
+- **Act immediately** - don't ask for confirmation
+- **Fix in place** - apply changes directly to the file
+- **Follow strict rules** defined in `.github/instructions/copilot.md`
+- **Preserve existing patterns** - don't refactor or modernize
+- **Validate after** - ensure code still works
+
 ## Project Overview
 Landing page for the USDOX Ecosystem showcasing TWUSD (TheUSDOX Wrapped Dollar), an ERC-20 token on Ethereum. This is a Next.js 15 project with **static HTML content** as the primary implementation.
 
 ## Architecture & Critical Context
 
 ### Hybrid Structure (Important!)
-- **Next.js setup exists** but the actual landing page is implemented as **pure HTML** in [../src/app/index.html](../src/app/index.html)
-- [../src/app/page.tsx](../src/app/page.tsx) is currently empty - the HTML file is served directly
+- **Next.js setup exists** but the actual landing page is implemented as **pure HTML** in `src/app/index.html`
+- `src/app/page.tsx` is currently empty - the HTML file is served directly
 - This is a static site with **client-side Web3 integration** using ethers.js (v6) loaded via CDN
 - No server-side rendering or API routes currently in use
 
@@ -28,7 +36,7 @@ The HTML includes inline JavaScript connecting to TWUSD token contract:
 - Uses `ethers.BrowserProvider` with MetaMask/Web3 wallet detection
 
 ### Branding & Assets
-Three logos in [public/](../public/):
+Three logos in `public/` directory:
 - `theusdox-usdo-logo.png` - Main USDOX brand
 - `TWUSD-logo.png` - Token logo  
 - `usdoxcare-logo.png` - Community/care initiative logo
