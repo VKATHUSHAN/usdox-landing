@@ -10,9 +10,9 @@
 
 Copilot **MUST** follow these rules at all times:
 
-1. ❌ DO NOT introduce new frameworks, tools, or libraries
+1. ❌ DO NOT introduce new frameworks, tools, or libraries beyond ethers.js (already included)
 2. ❌ DO NOT change Next.js version
-3. ❌ DO NOT add Web3, wallet connect, swap, or API calls
+3. ❌ DO NOT modify existing Web3 integration in index.html
 4. ❌ DO NOT rename files or folders
 5. ❌ DO NOT generate placeholder or lorem text
 6. ❌ DO NOT change existing copy text unless explicitly asked
@@ -43,10 +43,10 @@ This project is a **static marketing landing page** for an ERC-20 token.
 
 Copilot may use **ONLY**:
 
-* Next.js (App Router)
-* React
-* TypeScript
-* Tailwind CSS
+* Next.js (App Router) - scaffolding only
+* Pure HTML in `src/app/index.html` (actual implementation)
+* ethers.js v6 (CDN-loaded for Web3)
+* Inline CSS styles
 * Static assets from `/public`
 
 NO OTHER DEPENDENCIES.
@@ -55,99 +55,74 @@ NO OTHER DEPENDENCIES.
 
 ## 📁 FILE STRUCTURE (DO NOT MODIFY)
 
-Copilot must assume this structure and never alter it:
+Copilot must work with this structure:
 
 ```
 src/
 └─ app/
-   ├─ layout.tsx
-   ├─ page.tsx
-   └─ globals.css
+   ├─ index.html (PRIMARY - static landing page)
+   └─ page.tsx (empty - HTML served directly)
 public/
-└─ (logos + images only)
+├─ theusdox-usdo-logo.png
+├─ TWUSD-logo.png
+└─ usdoxcare-logo.png
 ```
+
+**Critical**: All edits go to `index.html`, NOT React components.
 
 ---
 
-## 📄 `layout.tsx` RULES
+## 📄 `index.html` CONTENT RULES (CRITICAL)
 
-Copilot must:
-
-* Use semantic HTML
-* Include SEO-friendly metadata
-* Avoid dynamic imports
-* Avoid analytics scripts
-* Avoid JSON-LD
-
-**Title format:**
-
-```
-USDOX (TWUSD) | Ethereum ERC20 Token
-```
-
-**Description format:**
-
-```
-Official landing page for the USDOX Wrapped Dollar (TWUSD) on Ethereum.
-```
-
----
-
-## 📄 `page.tsx` CONTENT RULES (CRITICAL)
-
-Copilot **MUST render these sections IN ORDER**:
+The file already contains all required sections. Copilot **MUST preserve**:
 
 ### 1️⃣ Hero Section
-
-* Project name: **USDOX**
-* Subtitle: **The Wrapped Dollar on Ethereum**
-* No call-to-action buttons
-* No animations
+* Title: "USDOX Ecosystem"
+* Subtitle: "Transparent Digital Dollar Infrastructure on Ethereum"
+* Logo references: `assets/logos/theusdox2-usdo-logo.png`, `assets/logos/TWUSD2-logo.png`
+* Etherscan link to contract
 
 ### 2️⃣ Token Information Section
+* **Exact values** (DO NOT CHANGE):
+  - Token Name: TheUSDOX Wrapped Dollar
+  - Symbol: TWUSD
+  - Network: Ethereum Mainnet
+  - Contract: `0x7BeB51807E3c8BdB10A2868bD51c2D9E1764925D`
+  - Decimals: 6
+  - Standard: ERC-20
 
-Copilot must display **exact values**:
+### 3️⃣ Live Dashboard (Web3 Integration)
+* Connect Wallet button using ethers.js
+* Display totalSupply() on page load
+* Display balanceOf() after wallet connection
+* Format with 6 decimals: `ethers.formatUnits(value, 6)`
 
-* Token Name: The USDOX Wrapped Dollar
-* Symbol: TWUSD
-* Network: Ethereum Mainnet
-* Contract Address:
-  `0x7BeB51807E3c8BdB10A2868bD51c2D9E1764925D`
-* Decimals: 6
-* Standard: ERC-20
+### 4️⃣ Supported Routing (Visual Only)
+* ETH → TWUSD
+* USDT → TWUSD  
+* USDC → TWUSD
+* Disclaimer: "under development, no liquidity guarantees"
 
-⚠️ Contract address must be **copyable plain text**
+### 5️⃣ Legal & Branding Disclosure
+* Not affiliated with Tether/Circle
+* "Wrapped Dollar" = internal ecosystem term
 
----
-
-### 3️⃣ Disclaimer Section (MANDATORY)
-
-Copilot must include **verbatim disclaimer text**:
-
-> This website is provided for informational purposes only and does not constitute financial advice, investment recommendations, or an offer to sell any assets.
-
-No edits. No rewording.
-
----
-
-### 4️⃣ Footer Section
-
-* Copyright
-* Project name
-* Current year (computed)
+### 6️⃣ Footer
+* Copyright © 2025 TheUSDOX
+* Links: Website, Telegram, GitHub, X, Contact
 
 ---
 
-## 🎨 STYLING RULES (TAILWIND)
+## 🎨 STYLING RULES (INLINE CSS)
 
-Copilot must:
+Copilot must maintain existing inline styles:
 
-* Use neutral dark/light theme
-* Avoid gradients
-* Avoid heavy shadows
-* Avoid animations
-* Ensure mobile responsiveness
-* Prefer padding and spacing over visual effects
+* Dark theme: `#0b0d10` background, `#e5e7eb` text
+* Accent color: `#60a5fa` for links
+* Card backgrounds: `#111827` with `#1f2937` borders
+* Font: Inter, system-ui, -apple-system
+* Mobile-responsive with centered max-width 1100px
+* Minimal effects, no gradients, no animations
 
 Design goal: **Etherscan-friendly, serious, minimal**
 
@@ -181,9 +156,12 @@ Copilot must:
 
 Copilot's task is **complete** when:
 
-✔️ `npm run dev` works
+✔️ `npm run dev` serves index.html successfully
 ✔️ Page renders without console errors
-✔️ Content matches token details exactly
+✔️ Web3 integration loads totalSupply() on page load
+✔️ Wallet connection displays user balance
+✔️ Contract address `0x7BeB51807E3c8BdB10A2868bD51c2D9E1764925D` is correct
+✔️ All logos load from `/public` directory
 ✔️ Page is deployable to Vercel
 ✔️ Suitable for Etherscan submission
 
