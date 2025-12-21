@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>USDOX Ecosystem — Transparent Digital Dollar Infrastructure</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="USDOX Ecosystem providing transparent, verifiable digital dollar infrastructure on Ethereum. TWUSD wrapped dollar asset." />
+
+    <script src="https://cdn.jsdelivr.net/npm/ethers@6.10.0/dist/ethers.umd.min.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Inter, system-ui, -apple-system, sans-serif;
+            background: #0b0d10;
+            color: #e5e7eb;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #60a5fa;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 80px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #f9fafb;
+        }
+
+        .hero {
+            text-align: center;
+        }
+
+        .hero img {
+            height: 64px;
+            margin: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 20px;
+            margin: 10px;
+            background: #1f2937;
+            border-radius: 8px;
+            border: 1px solid #374151;
+            color: #fff;
+        }
+
+        .card {
+            background: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 24px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #1f2937;
+        }
+
+        .logos img {
+            height: 36px;
+            margin-right: 12px;
+            vertical-align: middle;
+        }
+
+        footer {
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid #1f2937;
+            color: #9ca3af;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+        <img src="assets/logos/theusdox2-usdo-logo.png" alt="TheUSDOX Logo">
+        <h1>USDOX Ecosystem</h1>
+        <p>Transparent Digital Dollar Infrastructure on Ethereum</p>
+
+        <img src="assets/logos/TWUSD2-logo.png" alt="TWUSD Logo">
+
+        <div>
+            <a class="btn" href="https://etherscan.io/token/0x7BeB51807E3c8BdB10A2868bD51c2D9E1764925D"
+                target="_blank">View TWUSD on Etherscan</a>
+            <a class="btn" href="TWUSD-Token-Disclosure.pdf" target="_blank">Read Token Disclosure</a>
+        </div>
+    </section>
+
+    <!-- TWUSD INFO -->
+    <section>
+        <h2>TWUSD — TheUSDOX Wrapped Dollar (EVM)</h2>
+        <p>TWUSD is an ERC-20 wrapped dollar asset designed for transactional use, DeFi integrations, and on-chain
+            settlement within the USDOX ecosystem.</p>
+
+        <div class="card">
+            <table>
+                <tr>
+                    <td>Token Name</td>
+                    <td>TheUSDOX Wrapped Dollar</td>
+                </tr>
+                <tr>
+                    <td>Symbol</td>
+                    <td>TWUSD</td>
+                </tr>
+                <tr>
+                    <td>Network</td>
+                    <td>Ethereum Mainnet</td>
+                </tr>
+                <tr>
+                    <td>Standard</td>
+                    <td>ERC-20</td>
+                </tr>
+                <tr>
+                    <td>Decimals</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>Total Supply</td>
+                    <td id="supply">Loading…</td>
+                </tr>
+                <tr>
+                    <td>Contract</td>
+                    <td>0x7BeB51807E3c8BdB10A2868bD51c2D9E1764925D</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <!-- DASHBOARD -->
+    <section>
+        <h2>Live Token Dashboard</h2>
+        <div class="card">
+            <button class="btn" onclick="connect()">Connect Wallet</button>
+            <p>Your TWUSD Balance: <strong id="balance">—</strong></p>
+        </div>
+    </section>
+
+    <!-- BUY ROUTES -->
+    <section>
+        <h2>Supported Routing (Visual)</h2>
+        <div class="card logos">
+            <p>
+                <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="ETH"> ETH → TWUSD
+            </p>
+            <p>
+                <img src="https://cryptologos.cc/logos/tether-usdt-logo.png" alt="USDT"> USDT → TWUSD
+            </p>
+            <p>
+                <img src="https://cryptologos.cc/logos/usd-coin-usdc-logo.png" alt="USDC"> USDC → TWUSD
+            </p>
+            <small>Routing and integrations under development. No liquidity or swap guarantees implied.</small>
+        </div>
+    </section>
+
+    <!-- TRANSPARENCY -->
+    <section>
+        <h2>Transparency & Verifiability</h2>
+        <ul>
+            <li>Public smart contract source code</li>
+            <li>Fully observable supply on Ethereum</li>
+            <li>No hidden minting mechanisms</li>
+            <li>Standard ERC-20 behavior</li>
+        </ul>
+    </section>
+
+    <!-- USD OX CARE -->
+    <section>
+        <img src="assets/logos/usdoxcare2-logo.png" alt="USDOXCARE Logo" height="48">
+        <h2>USDOXCARE</h2>
+        <p>USDOXCARE promotes education, transparency, and responsible stewardship of the USDOX ecosystem.</p>
+    </section>
+
+    <!-- LEGAL -->
+    <section>
+        <h2>Legal & Branding Disclosure</h2>
+        <p>
+            TWUSD is not affiliated with Tether, USDT, Circle, or any third-party stablecoin issuer.
+            “Wrapped Dollar” refers solely to an internal ecosystem representation and does not imply custodial claims
+            or fiat backing.
+        </p>
+    </section>
+
+    <footer>
+        <p>© 2025 TheUSDOX</p>
+        <p>
+            <a href="https://theusdox.com">Website</a> ·
+            <a href="https://github.com/VKATHUSHAN">GitHub</a> ·
+            <a href="https://x.com/TheUSDOXs">X</a> ·
+            <a href="mailto:hello@theusdox.com">Contact</a>
+        </p>
+    </footer>
+
+    <script>
+        const CONTRACT = "0x7BeB51807E3c8BdB10A2868bD51c2D9E1764925D";
+        const ABI = [
+            "function totalSupply() view returns (uint256)",
+            "function balanceOf(address) view returns (uint256)"
+        ];
+
+        let provider, signer, contract;
+
+        async function init() {
+            provider = new ethers.BrowserProvider(window.ethereum || ethers.getDefaultProvider());
+            contract = new ethers.Contract(CONTRACT, ABI, provider);
+
+            const supply = await contract.totalSupply();
+            document.getElementById("supply").innerText =
+                Number(ethers.formatUnits(supply, 6)).toLocaleString() + " TWUSD";
+        }
+
+        async function connect() {
+            await window.ethereum.request({method: "eth_requestAccounts"});
+            signer = await provider.getSigner();
+            const user = await signer.getAddress();
+            const bal = await contract.balanceOf(user);
+            document.getElementById("balance").innerText =
+                Number(ethers.formatUnits(bal, 6)).toLocaleString() + " TWUSD";
+        }
+
+        init();
+    </script>
+
+</body>
+
+</html>
