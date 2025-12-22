@@ -1,41 +1,125 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-:root {
-  --background: #0b0d10;
-  --foreground: #e5e7eb;
-  --card: #111827;
-  --card-border: #1f2937;
-  --primary: #60a5fa;
-  --primary-hover: #3b82f6;
-  --muted: #9ca3af;
+@theme {
+  /* Color Palette */
+  --color-background: #0b0d10;
+  --color-foreground: #e5e7eb;
+  --color-card: #111827;
+  --color-card-border: #1f2937;
+  --color-primary: #60a5fa;
+  --color-primary-hover: #3b82f6;
+  --color-muted: #9ca3af;
+  
+  /* Brand Colors */
+  --color-brand-blue: #60a5fa;
+  --color-brand-purple: #a78bfa;
+  --color-brand-green: #34d399;
+  
+  /* Spacing Scale */
+  --spacing-section: 5rem;
+  
+  /* Custom Fonts */
+  --font-sans: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  --font-mono: ui-monospace, 'SF Mono', Monaco, 'Cascadia Code', monospace;
+  
+  /* Border Radius */
+  --radius-card: 0.75rem;
+  --radius-button: 0.5rem;
+  
+  /* Shadows */
+  --shadow-glow: 0 0 20px rgb(96 165 250 / 0.3);
+  --shadow-card: 0 10px 40px rgb(96 165 250 / 0.2);
+  
+  /* Transitions */
+  --transition-base: all 0.3s ease;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  min-height: 100vh;
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    min-height: 100vh;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  * {
+    @apply border-gray-800;
+  }
 }
 
-@layer utilities {
+@layer components {
   .text-gradient {
-    background: linear-gradient(to right, #60a5fa, #a78bfa);
+    background: linear-gradient(to right, var(--color-brand-blue), var(--color-brand-purple));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-
-  .glow {
-    box-shadow: 0 0 20px rgba(96, 165, 250, 0.3);
+  
+  .card {
+    @apply bg-white/5 backdrop-blur-sm rounded-xl border border-gray-800;
   }
-
+  
   .card-hover {
-    transition: all 0.3s ease;
+    transition: var(--transition-base);
   }
-
+  
   .card-hover:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 40px rgba(96, 165, 250, 0.2);
+    box-shadow: var(--shadow-card);
+  }
+  
+  .btn-primary {
+    @apply px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply px-8 py-3 border border-gray-600 hover:border-gray-500 rounded-lg font-medium transition-colors;
+  }
+  
+  .section-container {
+    @apply max-w-6xl mx-auto px-6;
+  }
+}
+
+@layer utilities {
+  .glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 }
