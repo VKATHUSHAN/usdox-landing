@@ -379,7 +379,7 @@ export default function Home() {
           <div className="space-y-6">
             {/* Tether Allocation */}
             <div className="bg-white/5 backdrop-blur-sm rounded-xl border border-gray-800 overflow-hidden">
-              <div className="bg-gradient-to-r from-green-900/50 to-green-800/30 px-6 py-4 border-b border-gray-800 flex justify-between items-center">
+              <div className="bg-linear-to-r from-green-900/50 to-green-800/30 px-6 py-4 border-b border-gray-800 flex justify-between items-center">
                 <h3 className="text-lg font-bold">Tether (USDT) Allocation</h3>
                 <span className="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">€33B Reserve</span>
               </div>
@@ -430,7 +430,7 @@ export default function Home() {
 
             {/* USDOX Allocation */}
             <div className="bg-white/5 backdrop-blur-sm rounded-xl border border-gray-800 overflow-hidden">
-              <div className="bg-gradient-to-r from-blue-900/50 to-purple-800/30 px-6 py-4 border-b border-gray-800 flex justify-between items-center">
+              <div className="bg-linear-to-r from-blue-900/50 to-purple-800/30 px-6 py-4 border-b border-gray-800 flex justify-between items-center">
                 <h3 className="text-lg font-bold">USDOX (USDO) Allocation</h3>
                 <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">€47B Reserve</span>
               </div>
@@ -480,7 +480,7 @@ export default function Home() {
             </div>
 
             {/* Total Summary */}
-            <div className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-xl p-6 border-2 border-gray-700">
+            <div className="bg-linear-to-r from-gray-900 to-gray-800 rounded-xl p-6 border-2 border-gray-700">
               <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                 <div>
                   <h3 className="text-xl font-bold mb-1">Total Reserve Backing</h3>
