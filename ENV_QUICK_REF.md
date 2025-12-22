@@ -1,6 +1,6 @@
 # 🔐 ENVIRONMENT VARIABLES - QUICK REFERENCE
 
-## ✅ What Was Created:
+## ✅ What Was Created
 
 1. **`.env.example`** - Template with ALL possible variables (committed to Git)
 2. **`.env`** - Your actual production values (🔒 NOT in Git, stays private)
@@ -8,7 +8,7 @@
 
 ---
 
-## 🚀 Immediate Actions Required:
+## 🚀 Immediate Actions Required
 
 ### **For Vercel Production Deployment:**
 
@@ -25,18 +25,18 @@ Then **trigger a redeploy**.
 
 ---
 
-## 📁 Files Status:
+## 📁 Files Status
 
-| File | Status | Purpose |
-|------|--------|---------|
-| `.env.example` | ✅ In Git | Template for others |
-| `.env` | ❌ NOT in Git | Your production secrets |
-| `.env.local` | ❌ NOT in Git | Local development |
-| `.gitignore` | ✅ In Git | Already protects .env files |
+| File            | Status        | Purpose                        |
+| --------------- | ------------- | ------------------------------ |
+| `.env.example`  | ✅ In Git     | Template for others            |
+| `.env`          | ❌ NOT in Git | Your production secrets        |
+| `.env.local`    | ❌ NOT in Git | Local development              |
+| `.gitignore`    | ✅ In Git     | Already protects .env files    |
 
 ---
 
-## 🔒 Security Verified:
+## 🔒 Security Verified
 
 ```bash
 # Test that .env is ignored:
@@ -54,7 +54,7 @@ $ git status
 
 ---
 
-## 📝 Current .env Contents:
+## 📝 Current .env Contents
 
 ```bash
 # Smart Contracts
@@ -88,7 +88,7 @@ NODE_ENV=production
 
 ---
 
-## 🎯 To Add API Keys Later:
+## 🎯 To Add API Keys Later
 
 When you get API keys for these services, add them to `.env`:
 
@@ -107,7 +107,7 @@ ETHERSCAN_API_KEY=your_api_key_here
 
 ---
 
-## 💡 How to Use in Code:
+## 💡 How to Use in Code
 
 ```typescript
 // Any component/page (client-side)
@@ -119,7 +119,7 @@ const swapUrl = `${process.env.NEXT_PUBLIC_UNISWAP_URL}/swap?outputCurrency=${pr
 
 ---
 
-## ⚠️ Important Reminders:
+## ⚠️ Important Reminders
 
 1. **Never commit `.env` files with real secrets**
 2. **Always restart dev server after changing .env files**
@@ -129,12 +129,12 @@ const swapUrl = `${process.env.NEXT_PUBLIC_UNISWAP_URL}/swap?outputCurrency=${pr
 
 ---
 
-## 🔗 Quick Links:
+## 🔗 Quick Links
 
-- **Vercel Dashboard:** https://vercel.com/dashboard
+- **Vercel Dashboard:** <https://vercel.com/dashboard>
 - **Full Setup Guide:** See `ENV_SETUP_GUIDE.md`
-- **WalletConnect:** https://cloud.walletconnect.com
-- **Google Analytics:** https://analytics.google.com
+- **WalletConnect:** <https://cloud.walletconnect.com>
+- **Google Analytics:** <https://analytics.google.com>
 
 ---
 
