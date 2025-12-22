@@ -4,7 +4,7 @@
 
 ### **Main Homepage (`localhost:3000`)**
 
-```
+```text
 ┌─────────────────────────────────────────────────────┐
 │ 🏠 HERO SECTION                                     │
 │ "USDOX — The On-Chain Dollar"                      │
@@ -72,7 +72,7 @@
 
 ### **What Happens When Clicked:**
 
-```
+```text
 User clicks "Get TWUSD"
         ↓
 Opens Uniswap in new tab
@@ -90,6 +90,7 @@ User receives TWUSD
 ```
 
 ### **What Doesn't Happen:**
+
 - ❌ No wallet connection on your site
 - ❌ No transaction approval
 - ❌ No fund custody
@@ -104,17 +105,20 @@ User receives TWUSD
 ## 📄 The PDF Download
 
 ### **File Location:**
-```
+
+```text
 public/
   └── TWUSD_Overview.md
 ```
 
 ### **Accessed Via:**
-```
+
+```text
 https://yourdomain.com/TWUSD_Overview.md
 ```
 
 ### **Contains:**
+
 - ✅ What is TWUSD
 - ✅ Technical specifications
 - ✅ Contract verification
@@ -122,6 +126,7 @@ https://yourdomain.com/TWUSD_Overview.md
 - ✅ Contact information
 
 ### **Perfect For:**
+
 - 📊 Exchange listings (Binance, Coinbase)
 - 🔍 Block explorers (Etherscan, CMC)
 - 📱 Social media links
@@ -131,7 +136,8 @@ https://yourdomain.com/TWUSD_Overview.md
 
 ## 🎨 Visual Example
 
-### Before (No Action Path):
+### Before (No Action Path)
+
 ```
 ┌──────────────────────────┐
 │ TWUSD exists!            │
@@ -141,7 +147,8 @@ https://yourdomain.com/TWUSD_Overview.md
 └──────────────────────────┘
 ```
 
-### After (Clear Action Path):
+### After (Clear Action Path)
+
 ```
 ┌────────────────────────────────┐
 │ TWUSD Technical Details        │
@@ -161,6 +168,7 @@ https://yourdomain.com/TWUSD_Overview.md
 ## 🚦 User Journey Map
 
 ### **Scenario 1: First-time Visitor**
+
 1. Lands on homepage
 2. Reads "What is USDOX?"
 3. Sees ecosystem (USDOX, TWUSD, USDOXCare)
@@ -171,6 +179,7 @@ https://yourdomain.com/TWUSD_Overview.md
 8. Downloads PDF for later reference
 
 ### **Scenario 2: Exchange Listing Team**
+
 1. Searches for "TWUSD documentation"
 2. Finds homepage
 3. **Downloads PDF immediately**
@@ -179,6 +188,7 @@ https://yourdomain.com/TWUSD_Overview.md
 6. Proceeds with listing process
 
 ### **Scenario 3: DeFi Power User**
+
 1. Sees TWUSD on Twitter
 2. Visits homepage to verify
 3. Checks contract address
@@ -198,7 +208,8 @@ https://yourdomain.com/TWUSD_Overview.md
    - Time to action
 
 2. **A/B Test Copy:**
-   ```
+
+   ```text
    Version A: "Get TWUSD"
    Version B: "Buy TWUSD on Uniswap"
    Version C: "Swap for TWUSD"
@@ -210,6 +221,7 @@ https://yourdomain.com/TWUSD_Overview.md
    - "24h volume: $X"
 
 4. **SEO Optimization:**
+
    ```html
    <meta name="keywords" content="buy twusd, get twusd, twusd uniswap">
    <title>Get TWUSD | TheUSDOX Wrapped Dollar</title>
@@ -220,21 +232,25 @@ https://yourdomain.com/TWUSD_Overview.md
 ## 🔧 Quick Commands
 
 ### **Start Development Server:**
+
 ```bash
 npm run dev
 # Visit: http://localhost:3000
 ```
 
 ### **Test Button:**
+
 1. Scroll to "TWUSD Technical Specification"
 2. Click "Get TWUSD"
 3. Should open: `https://app.uniswap.org/swap?outputCurrency=0x7BeB51807E3c8BdB10A2868bD51c2D9E1764925D&chain=mainnet`
 
 ### **Test PDF Download:**
+
 1. Click "Download TWUSD Overview (PDF)"
 2. File should download: `TWUSD_Overview.md`
 
 ### **Verify Mobile:**
+
 ```bash
 # Access from phone on same network:
 http://192.168.0.152:3000
@@ -262,16 +278,19 @@ Before going live, confirm:
 ## 🆘 Troubleshooting
 
 ### **Button doesn't open Uniswap:**
+
 - Check URL encoding
 - Verify contract address
 - Test in incognito mode
 
 ### **PDF doesn't download:**
+
 - Confirm file exists in `/public/`
 - Check file permissions
 - Try direct URL access
 
 ### **Mobile layout broken:**
+
 - Test responsive breakpoints
 - Check `flex-col` on mobile
 - Verify touch targets (44px min)
@@ -281,13 +300,15 @@ Before going live, confirm:
 ## 📞 Support Resources
 
 ### **Code Location:**
+
 - Button: `src/components/GetTWUSDButton.tsx`
 - Page: `src/app/page.tsx` (line ~475)
 - PDF: `public/TWUSD_Overview.md`
 
 ### **External Links:**
-- Uniswap: https://app.uniswap.org
-- Etherscan: https://etherscan.io/address/0x7BeB51807E3c8BdB10A2868bD51c2D9E1764925D
+
+- Uniswap: <https://app.uniswap.org>
+- Etherscan: <https://etherscan.io/address/0x7BeB51807E3c8BdB10A2868bD51c2D9E1764925D>
 - Contract: 0x7BeB51807E3c8BdB10A2868bD51c2D9E1764925D
 
 ---
