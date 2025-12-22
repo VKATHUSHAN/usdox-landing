@@ -90,7 +90,7 @@ export default function USDOXCarePage() {
           <h2 className="text-3xl font-bold mb-12 text-center">USDOXCare Focus Areas</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-br from-blue-900/30 to-blue-800/20 rounded-xl p-8 border-2 border-blue-700/40">
+            <div className="bg-linear-to-br from-blue-900/30 to-blue-800/20 rounded-xl p-8 border-2 border-blue-700/40">
               <div className="text-blue-400 mb-4">
                 <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
@@ -103,7 +103,7 @@ export default function USDOXCarePage() {
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-purple-900/30 to-purple-800/20 rounded-xl p-8 border-2 border-purple-700/40">
+            <div className="bg-linear-to-br from-purple-900/30 to-purple-800/20 rounded-xl p-8 border-2 border-purple-700/40">
               <div className="text-purple-400 mb-4">
                 <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
@@ -115,7 +115,7 @@ export default function USDOXCarePage() {
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-green-900/30 to-green-800/20 rounded-xl p-8 border-2 border-green-700/40">
+            <div className="bg-linear-to-br from-green-900/30 to-green-800/20 rounded-xl p-8 border-2 border-green-700/40">
               <div className="text-green-400 mb-4">
                 <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
@@ -133,7 +133,7 @@ export default function USDOXCarePage() {
       {/* Why USDOXCare Matters */}
       <section className="py-16 px-6 max-w-6xl mx-auto fade-in-section" id="why">
         <div className={`transition-all duration-1000 ${isVisible.why ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-10 border border-gray-700">
+          <div className="bg-linear-to-br from-gray-900 to-gray-800 rounded-xl p-10 border border-gray-700">
             <h2 className="text-3xl font-bold mb-6">Why USDOXCare Matters</h2>
             <p className="text-xl text-gray-300 leading-relaxed mb-6">
               Stablecoins are not just code — they are <strong className="text-white">public trust instruments</strong>.
