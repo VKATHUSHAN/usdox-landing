@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import GetTWUSDButton from '@/components/GetTWUSDButton';
 
 interface VisibilityState {
   [key: string]: boolean;
@@ -480,7 +479,6 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 items-center">
-                <GetTWUSDButton />
                 <a
                   href="/TWUSD_Overview.md"
                   download
