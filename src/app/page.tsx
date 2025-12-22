@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import GetTWUSDButton from '@/components/GetTWUSDButton';
 
 interface VisibilityState {
   [key: string]: boolean;
@@ -468,10 +469,27 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-6 pt-4 border-t border-gray-800">
-            <p className="text-sm text-gray-400">
-              All token parameters are publicly verifiable on Ethereum.
-            </p>
+          <div className="mt-8 pt-6 border-t border-gray-800">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="flex-1">
+                <p className="text-sm text-gray-300 mb-2">
+                  <strong className="text-white">TWUSD is an Ethereum-native wrapped dollar designed for DeFi utility.</strong>
+                </p>
+                <p className="text-sm text-gray-400">
+                  Always verify contract addresses before interacting.
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4 items-center">
+                <GetTWUSDButton />
+                <a
+                  href="/TWUSD_Overview.md"
+                  download
+                  className="text-sm text-blue-400 hover:text-blue-300 underline transition whitespace-nowrap"
+                >
+                  Download TWUSD Overview (PDF)
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
