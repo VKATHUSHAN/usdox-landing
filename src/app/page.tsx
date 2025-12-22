@@ -114,16 +114,16 @@ export default function Home() {
           <div className="flex items-center space-x-4">
             <USDOXLogo size="small" />
             <div>
-              <h1 className="text-xl font-semibold">USDOX Ecosystem</h1>
-              <p className="text-sm text-gray-400 hidden sm:block">Transparent Digital Dollar Infrastructure</p>
+              <h1 className="text-xl font-semibold">TheUSDOX</h1>
+              <p className="text-sm text-gray-400 hidden sm:block">The On-Chain Dollar</p>
             </div>
           </div>
           
           <nav className="hidden md:flex space-x-8">
-            <a href="#token-info" className="text-gray-300 hover:text-white transition">Token Info</a>
-            <a href="#architecture" className="text-gray-300 hover:text-white transition">Architecture</a>
-            <a href="#transparency" className="text-gray-300 hover:text-white transition">Transparency</a>
-            <a href="#reserve-proof" className="text-gray-300 hover:text-white transition">Reserves</a>
+            <a href="#what-is-usdox" className="text-gray-300 hover:text-white transition">About</a>
+            <a href="#architecture" className="text-gray-300 hover:text-white transition">Ecosystem</a>
+            <a href="#token-info" className="text-gray-300 hover:text-white transition">Trust</a>
+            <a href="#roadmap" className="text-gray-300 hover:text-white transition">Roadmap</a>
           </nav>
 
           <button 
@@ -145,52 +145,287 @@ export default function Home() {
 
         {mobileMenuOpen && (
           <nav className="md:hidden mt-4 pb-4 space-y-2">
-            <a href="#token-info" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-gray-300 hover:text-white transition">Token Information</a>
-            <a href="#architecture" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-gray-300 hover:text-white transition">Architecture</a>
-            <a href="#transparency" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-gray-300 hover:text-white transition">Transparency</a>
-            <a href="#reserve-proof" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-gray-300 hover:text-white transition">Reserve Proof</a>
+            <a href="#what-is-usdox" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-gray-300 hover:text-white transition">About</a>
+            <a href="#architecture" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-gray-300 hover:text-white transition">Ecosystem</a>
+            <a href="#token-info" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-gray-300 hover:text-white transition">Trust</a>
+            <a href="#roadmap" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-gray-300 hover:text-white transition">Roadmap</a>
           </nav>
         )}
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 px-6 max-w-6xl mx-auto fade-in-section" id="hero">
-        <div className="text-center space-y-6">
-          <div className="flex justify-center mb-6">
+      <section className="py-32 px-6 max-w-6xl mx-auto fade-in-section" id="hero">
+        <div className="text-center space-y-8">
+          <div className="flex justify-center mb-8">
             <USDOXLogo />
           </div>
-          <h1 className={`text-4xl md:text-5xl font-bold transition-opacity duration-1000 ${isVisible.hero ? 'opacity-100' : 'opacity-0'}`}>
-            USDOX Ecosystem
+          <h1 className={`text-5xl md:text-6xl font-bold transition-opacity duration-1000 ${isVisible.hero ? 'opacity-100' : 'opacity-0'}`}>
+            USDOX — The On-Chain Dollar
           </h1>
-          <p className={`text-xl text-gray-300 max-w-3xl mx-auto transition-opacity duration-1000 delay-300 ${isVisible.hero ? 'opacity-100' : 'opacity-0'}`}>
-            Transparent Digital Dollar Infrastructure
+          <p className={`text-2xl text-white font-semibold max-w-3xl mx-auto transition-opacity duration-1000 delay-200 ${isVisible.hero ? 'opacity-100' : 'opacity-0'}`}>
+            Stable. Transparent. Built for the long term.
           </p>
-          <p className={`text-lg text-gray-400 max-w-4xl mx-auto transition-opacity duration-1000 delay-500 ${isVisible.hero ? 'opacity-100' : 'opacity-0'}`}>
-            TWUSD is the wrapped dollar asset within the USDOX ecosystem, designed for on-chain stability, composability, and verifiable supply on Ethereum.
+          <p className={`text-lg text-gray-300 max-w-4xl mx-auto transition-opacity duration-1000 delay-400 ${isVisible.hero ? 'opacity-100' : 'opacity-0'}`}>
+            USDOX is a decentralized digital dollar designed for clarity, trust, and real-world utility.<br />
+            No hype cycles. No hidden mechanics. Just a predictable on-chain dollar for the next era of finance.
           </p>
-          <div className={`flex flex-col sm:flex-row gap-4 justify-center mt-8 transition-opacity duration-1000 delay-700 ${isVisible.hero ? 'opacity-100' : 'opacity-0'}`}>
+          <p className={`text-base text-gray-400 max-w-3xl mx-auto font-medium transition-opacity duration-1000 delay-600 ${isVisible.hero ? 'opacity-100' : 'opacity-0'}`}>
+            Fast settlement. Fixed precision. Auditable by design.
+          </p>
+          <div className={`flex flex-col sm:flex-row gap-4 justify-center mt-12 transition-opacity duration-1000 delay-800 ${isVisible.hero ? 'opacity-100' : 'opacity-0'}`}>
             <a
               href="https://etherscan.io/address/0x7beb51807e3c8bdb10a2868bd51c2d9e1764925d"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium transition-colors"
+              className="px-10 py-4 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold text-lg transition-all transform hover:scale-105"
             >
-              View TWUSD on Etherscan
-            </a>
-            <a
-              href="#token-info"
-              className="px-8 py-3 border border-gray-600 hover:border-gray-500 rounded-lg font-medium transition-colors"
-            >
-              Read Token Disclosure
+              Get USDOX — The on-chain dollar
             </a>
           </div>
         </div>
       </section>
 
-      {/* Token Information Section */}
-      <section id="token-info" className="py-16 px-6 max-w-6xl mx-auto fade-in-section">
-        <div className={`bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-gray-800 transition-all duration-1000 ${isVisible['token-info'] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-2xl font-bold mb-6 border-b border-gray-800 pb-4">TWUSD — TheUSDOX Wrapped Dollar (EVM)</h2>
+      {/* What is USDOX Section */}
+      <section className="py-20 px-6 max-w-6xl mx-auto fade-in-section" id="what-is-usdox">
+        <div className={`transition-all duration-1000 ${isVisible['what-is-usdox'] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <h2 className="text-3xl font-bold mb-8">What is USDOX?</h2>
+          <p className="text-lg text-gray-300 mb-6 leading-relaxed">
+            USDOX is the core stable asset of <strong>TheUSDOX ecosystem</strong> — a dollar-pegged digital currency engineered for builders, DeFi protocols, and long-term holders who value transparency over speculation.
+          </p>
+          <p className="text-lg text-gray-300 mb-6 leading-relaxed">
+            Unlike experimental stablecoins, USDOX focuses on:
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <div className="flex items-start space-x-3">
+              <svg className="w-6 h-6 text-blue-400 mt-1 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              <span className="text-gray-300">Clear token behavior</span>
+            </div>
+            <div className="flex items-start space-x-3">
+              <svg className="w-6 h-6 text-blue-400 mt-1 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              <span className="text-gray-300">Fixed precision (6 decimals)</span>
+            </div>
+            <div className="flex items-start space-x-3">
+              <svg className="w-6 h-6 text-blue-400 mt-1 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              <span className="text-gray-300">Declared supply logic</span>
+            </div>
+            <div className="flex items-start space-x-3">
+              <svg className="w-6 h-6 text-blue-400 mt-1 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              <span className="text-gray-300">Public, verifiable contracts</span>
+            </div>
+          </div>
+          <p className="text-lg text-gray-300 leading-relaxed">
+            USDOX is not built to chase trends.<br />
+            It's built to <strong className="text-white">outlast them</strong>.
+          </p>
+        </div>
+      </section>
+
+      {/* Trust by Design Section */}
+      <section id="token-info" className="py-20 px-6 max-w-6xl mx-auto fade-in-section">
+        <div className={`transition-all duration-1000 ${isVisible['token-info'] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <h2 className="text-3xl font-bold mb-8 pb-4 border-b-2 border-blue-600">Binance-Style Trust & Transparency</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-8 border border-gray-700">
+              <div className="text-blue-400 mb-4">
+                <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3">Trust by Design</h3>
+              <div className="space-y-2 text-sm text-gray-300">
+                <p><strong className="text-white">Network:</strong> Ethereum</p>
+                <p><strong className="text-white">Standard:</strong> ERC-20</p>
+                <p><strong className="text-white">Decimals:</strong> 6 (USDT-style)</p>
+                <p><strong className="text-white">Supply:</strong> Publicly declared</p>
+                <p><strong className="text-white">Contracts:</strong> Verified on Etherscan</p>
+              </div>
+              <p className="mt-4 text-gray-400 italic text-sm">
+                There are no hidden rules.<br />What you see is what you get.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-8 border border-gray-700">
+              <div className="text-green-400 mb-4">
+                <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                  <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3">Transparency First</h3>
+              <ul className="space-y-2 text-sm text-gray-300">
+                <li className="flex items-start">
+                  <span className="text-green-400 mr-2">•</span>
+                  All contracts publicly verifiable
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-400 mr-2">•</span>
+                  Token parameters fixed and visible
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-400 mr-2">•</span>
+                  Ecosystem components clearly separated
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-400 mr-2">•</span>
+                  No vague mechanics or opaque promises
+                </li>
+              </ul>
+              <p className="mt-4 text-gray-400 italic text-sm">
+                USDOX believes trust is not claimed — it's <strong className="text-white">proven</strong>.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-8 border border-gray-700">
+              <div className="text-purple-400 mb-4">
+                <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 1.944A11.954 11.954 0 012.166 5C2.056 5.649 2 6.319 2 7c0 5.225 3.34 9.67 8 11.317C14.66 16.67 18 12.225 18 7c0-.682-.057-1.35-.166-2.001A11.954 11.954 0 0110 1.944zM11 14a1 1 0 11-2 0 1 1 0 012 0zm0-7a1 1 0 10-2 0v3a1 1 0 102 0V7z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3">Security Mindset</h3>
+              <p className="text-sm text-gray-300 mb-4">
+                USDOX is developed with a conservative, security-first approach:
+              </p>
+              <ul className="space-y-2 text-sm text-gray-300">
+                <li className="flex items-start">
+                  <span className="text-purple-400 mr-2">•</span>
+                  Minimal contract complexity
+                </li>
+                <li className="flex items-start">
+                  <span className="text-purple-400 mr-2">•</span>
+                  Predictable token behavior
+                </li>
+                <li className="flex items-start">
+                  <span className="text-purple-400 mr-2">•</span>
+                  Clear separation of responsibilities
+                </li>
+              </ul>
+              <p className="mt-4 text-gray-400 italic text-sm">
+                Stability beats speed.<br />Clarity beats cleverness.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* TheUSDOX Ecosystem Section */}
+      <section id="architecture" className="py-20 px-6 max-w-6xl mx-auto fade-in-section">
+        <div className={`transition-all duration-1000 ${isVisible.architecture ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <h2 className="text-3xl font-bold mb-12 text-center">TheUSDOX Ecosystem</h2>
+
+          <div className="space-y-8">
+            <div className="bg-gradient-to-br from-blue-900/30 to-blue-800/20 rounded-xl p-8 border-2 border-blue-700/40">
+              <div className="flex items-center mb-4">
+                <div className="w-3 h-3 bg-blue-500 rounded-full mr-3"></div>
+                <h3 className="text-2xl font-bold">USDOX</h3>
+              </div>
+              <p className="text-lg font-semibold text-blue-100 mb-3">The Core Dollar</p>
+              <p className="text-gray-300 leading-relaxed">
+                The primary stablecoin of the ecosystem. Designed as a long-term on-chain dollar with a focus on stability, auditability, and future integrations.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-yellow-900/30 to-yellow-800/20 rounded-xl p-8 border-2 border-yellow-700/40">
+              <div className="flex items-center mb-4">
+                <div className="w-3 h-3 bg-yellow-500 rounded-full mr-3"></div>
+                <h3 className="text-2xl font-bold">TWUSD</h3>
+              </div>
+              <p className="text-lg font-semibold text-yellow-100 mb-3">TheUSDOX Wrapped Dollar (EVM)</p>
+              <p className="text-gray-300 mb-4 leading-relaxed">
+                TWUSD is the Ethereum-native wrapped representation of USDOX, optimized for DeFi liquidity and smart-contract interactions.
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                <div>
+                  <span className="text-gray-400 block mb-1">Network</span>
+                  <span className="font-semibold text-white">Ethereum</span>
+                </div>
+                <div>
+                  <span className="text-gray-400 block mb-1">Decimals</span>
+                  <span className="font-semibold text-white">6</span>
+                </div>
+                <div>
+                  <span className="text-gray-400 block mb-1">Supply</span>
+                  <span className="font-semibold text-white">33.2B</span>
+                </div>
+                <div>
+                  <span className="text-gray-400 block mb-1">Standard</span>
+                  <span className="font-semibold text-white">ERC-20</span>
+                </div>
+              </div>
+              <p className="text-gray-400 mt-4 text-sm italic">
+                TWUSD brings USDOX into the EVM world — cleanly and predictably.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-green-900/30 to-green-800/20 rounded-xl p-8 border-2 border-green-700/40">
+              <div className="flex items-center mb-4">
+                <div className="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
+                <h3 className="text-2xl font-bold">USDOXCare</h3>
+              </div>
+              <p className="text-lg font-semibold text-green-100 mb-3">Trust, Transparency & Responsibility</p>
+              <p className="text-gray-300 leading-relaxed">
+                USDOXCare is the social and organizational arm of the ecosystem, focused on transparency, education, and responsible growth.
+              </p>
+              <p className="text-gray-400 mt-4 italic">
+                Because stable money requires <strong className="text-white">stable values</strong>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why USDOX Section */}
+      <section className="py-20 px-6 max-w-6xl mx-auto fade-in-section" id="why-usdox">
+        <div className={`transition-all duration-1000 ${isVisible['why-usdox'] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <h2 className="text-3xl font-bold mb-6">Why USDOX?</h2>
+          <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+            Most stablecoins optimize for speed or dominance.<br />
+            USDOX optimizes for <strong className="text-white">trust</strong>.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="flex items-start space-x-3">
+              <svg className="w-6 h-6 text-green-400 mt-1 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L3.293 9.293a1 1 0 010-1.414l8-8a1 1 0 011.414 0z" clipRule="evenodd" />
+              </svg>
+              <span className="text-gray-300">Simple token logic</span>
+            </div>
+            <div className="flex items-start space-x-3">
+              <svg className="w-6 h-6 text-green-400 mt-1 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L3.293 9.293a1 1 0 010-1.414l8-8a1 1 0 011.414 0z" clipRule="evenodd" />
+              </svg>
+              <span className="text-gray-300">Transparent parameters</span>
+            </div>
+            <div className="flex items-start space-x-3">
+              <svg className="w-6 h-6 text-green-400 mt-1 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L3.293 9.293a1 1 0 010-1.414l8-8a1 1 0 011.414 0z" clipRule="evenodd" />
+              </svg>
+              <span className="text-gray-300">Publicly verifiable contracts</span>
+            </div>
+            <div className="flex items-start space-x-3">
+              <svg className="w-6 h-6 text-green-400 mt-1 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L3.293 9.293a1 1 0 010-1.414l8-8a1 1 0 011.414 0z" clipRule="evenodd" />
+              </svg>
+              <span className="text-gray-300">No unnecessary complexity</span>
+            </div>
+          </div>
+          <p className="text-lg text-gray-300 mt-8 leading-relaxed">
+            USDOX is built for people who plan to still be here in five years.
+          </p>
+        </div>
+      </section>
+
+      {/* Transparency & Verifiability - Technical Details */}
+      <section className="py-20 px-6 max-w-6xl mx-auto fade-in-section" id="technical-details">
+        <div className={`bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-gray-800 transition-all duration-1000 ${isVisible['technical-details'] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <h3 className="text-2xl font-bold mb-6 border-b border-gray-800 pb-4">TWUSD Technical Specification</h3>
           <p className="text-gray-300 mb-6">
             TWUSD is an ERC-20 wrapped dollar asset designed for transactional use, DeFi integrations, and on-chain settlement within the USDOX ecosystem.
           </p>
@@ -241,118 +476,104 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Token Architecture Overview */}
-      <section id="architecture" className="py-16 px-6 max-w-6xl mx-auto fade-in-section">
-        <div className={`transition-all duration-1000 ${isVisible.architecture ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-2xl font-bold mb-6 border-b border-gray-800 pb-4">Token Architecture Overview</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-            <div className="bg-gray-900/50 rounded-xl p-6 border border-gray-800">
+      {/* Roadmap Section */}
+      <section className="py-20 px-6 max-w-6xl mx-auto fade-in-section" id="roadmap">
+        <div className={`transition-all duration-1000 ${isVisible.roadmap ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <h2 className="text-3xl font-bold mb-12 text-center">Roadmap</h2>
+          
+          <div className="space-y-8">
+            <div className="bg-gray-900/50 rounded-xl p-8 border-l-4 border-blue-500">
               <div className="flex items-center mb-4">
-                <USDOXLogo size="small" />
-                <h3 className="ml-4 text-xl font-semibold">USDOX (USÐØX)</h3>
+                <span className="bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full">PHASE 1</span>
+                <h3 className="text-xl font-bold ml-4">Foundation</h3>
               </div>
-              <p className="text-gray-300">
-                The native ecosystem asset powering governance, reserves, and protocol-level operations. USDOX serves as the core foundation of the ecosystem.
-              </p>
+              <ul className="space-y-2 text-gray-300">
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-400 mr-3 mt-1 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  Core contracts deployed
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-400 mr-3 mt-1 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  TWUSD live on Ethereum
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-green-400 mr-3 mt-1 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  Brand & documentation established
+                </li>
+              </ul>
             </div>
 
-            <div className="bg-gray-900/50 rounded-xl p-6 border border-gray-800">
+            <div className="bg-gray-900/50 rounded-xl p-8 border-l-4 border-yellow-500">
               <div className="flex items-center mb-4">
-                <TWUSDLogo size="small" />
-                <h3 className="ml-4 text-xl font-semibold">TWUSD</h3>
+                <span className="bg-yellow-500 text-gray-900 text-xs font-bold px-3 py-1 rounded-full">PHASE 2</span>
+                <h3 className="text-xl font-bold ml-4">Ecosystem Expansion</h3>
               </div>
-              <p className="text-gray-300">
-                TheUSDOX Wrapped Dollar - a stable representation issued within the USDOX framework for transactional and DeFi use. Designed for on-chain stability and composability.
-              </p>
+              <ul className="space-y-2 text-gray-300">
+                <li className="flex items-start">
+                  <span className="text-yellow-500 mr-3">•</span>
+                  USDOX visibility rollout
+                </li>
+                <li className="flex items-start">
+                  <span className="text-yellow-500 mr-3">•</span>
+                  DeFi integrations
+                </li>
+                <li className="flex items-start">
+                  <span className="text-yellow-500 mr-3">•</span>
+                  Liquidity partnerships
+                </li>
+              </ul>
             </div>
-          </div>
 
-          <div className="p-6 bg-gray-900/50 rounded-xl border border-gray-800">
-            <p className="text-gray-300">
-              USDOX and TWUSD serve distinct roles and are not interchangeable assets. USDOX is the primary ecosystem asset that underpins governance, reserve logic, and protocol-level operations. TWUSD is a wrapped dollar representation issued within the USDOX framework to enable stable on-chain value transfer and integration with decentralized applications.
-            </p>
+            <div className="bg-gray-900/50 rounded-xl p-8 border-l-4 border-purple-500">
+              <div className="flex items-center mb-4">
+                <span className="bg-purple-500 text-white text-xs font-bold px-3 py-1 rounded-full">PHASE 3</span>
+                <h3 className="text-xl font-bold ml-4">Utility & Growth</h3>
+              </div>
+              <ul className="space-y-2 text-gray-300">
+                <li className="flex items-start">
+                  <span className="text-purple-500 mr-3">•</span>
+                  Cross-chain strategies
+                </li>
+                <li className="flex items-start">
+                  <span className="text-purple-500 mr-3">•</span>
+                  Institutional-grade tooling
+                </li>
+                <li className="flex items-start">
+                  <span className="text-purple-500 mr-3">•</span>
+                  Long-term sustainability initiatives
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Transparency & Verifiability */}
-      <section id="transparency" className="py-16 px-6 max-w-6xl mx-auto fade-in-section">
-        <div className={`transition-all duration-1000 ${isVisible.transparency ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-2xl font-bold mb-6 border-b border-gray-800 pb-4">Transparency & Verifiability</h2>
-          <p className="text-gray-300 mb-6">
-            The USDOX ecosystem is built with verifiability as a first-class principle.
+      {/* Closing CTA Section */}
+      <section className="py-24 px-6 max-w-4xl mx-auto text-center fade-in-section" id="cta">
+        <div className={`transition-all duration-1000 ${isVisible.cta ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <p className="text-xl text-gray-300 mb-4 leading-relaxed">
+            Stable money should feel boring — because boring means reliable.
           </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            <div className="space-y-3">
-              <div className="flex items-start">
-                <svg className="w-5 h-5 text-green-400 mr-3 mt-1 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L3.293 9.293a1 1 0 010-1.414l8-8a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                <span className="text-gray-300">TWUSD smart contract source code is publicly available</span>
-              </div>
-              <div className="flex items-start">
-                <svg className="w-5 h-5 text-green-400 mr-3 mt-1 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L3.293 9.293a1 1 0 010-1.414l8-8a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                <span className="text-gray-300">Contract deployment and supply are fully observable on Ethereum</span>
-              </div>
-              <div className="flex items-start">
-                <svg className="w-5 h-5 text-green-400 mr-3 mt-1 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L3.293 9.293a1 1 0 010-1.414l8-8a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                <span className="text-gray-300">No hidden minting mechanisms</span>
-              </div>
-              <div className="flex items-start">
-                <svg className="w-5 h-5 text-green-400 mr-3 mt-1 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L3.293 9.293a1 1 0 010-1.414l8-8a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                <span className="text-gray-300">Token behavior follows standard ERC-20 conventions</span>
-              </div>
-            </div>
-
-            <div className="bg-gray-900/50 rounded-xl p-6 border border-gray-800">
-              <h3 className="text-lg font-semibold mb-4">Public Resources</h3>
-              <div className="space-y-3">
-                <a
-                  href="https://etherscan.io/address/0x7beb51807e3c8bdb10a2868bd51c2d9e1764925d"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center text-blue-400 hover:text-blue-300 transition"
-                >
-                  <svg className="w-4 h-4 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                  Ethereum Contract (Etherscan)
-                </a>
-                <a
-                  href="https://github.com/VKATHUSHAN"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center text-blue-400 hover:text-blue-300 transition"
-                >
-                  <svg className="w-4 h-4 mr-2 shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                    <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
-                  </svg>
-                  GitHub Repository
-                </a>
-                <a
-                  href="https://theusdox.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center text-blue-400 hover:text-blue-300 transition"
-                >
-                  <svg className="w-4 h-4 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                  </svg>
-                  Official Website
-                </a>
-              </div>
-            </div>
-          </div>
+          <h2 className="text-3xl md:text-4xl font-bold mb-8">
+            USDOX is the on-chain dollar built for the long game.
+          </h2>
+          <a
+            href="https://etherscan.io/address/0x7beb51807e3c8bdb10a2868bd51c2d9e1764925d"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-10 py-4 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold text-lg transition-all transform hover:scale-105"
+          >
+            Join the USDOX ecosystem
+          </a>
         </div>
       </section>
+
 
       {/* Reserve Proof Section */}
       <section id="reserve-proof" className="py-16 px-6 max-w-6xl mx-auto fade-in-section">
@@ -459,6 +680,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
 
       {/* Footer */}
       <footer className="border-t border-gray-800 mt-20">
