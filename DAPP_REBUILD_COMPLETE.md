@@ -9,7 +9,9 @@ Successfully transformed `theusdox.com` from static brochure to **production-rea
 ## ✅ COMPLETED WORK
 
 ### 1. Core DApp Architecture
+
 **Created files:**
+
 - `src/dapp/config.ts` - Chain config, contract addresses, constants
 - `src/dapp/swap.ts` - Real Uniswap AlphaRouter integration
 - `src/dapp/permit.ts` - Permit2 approval (no repetitive approvals)
@@ -17,17 +19,21 @@ Successfully transformed `theusdox.com` from static brochure to **production-rea
 - `src/lib/providers.tsx` - WalletConnect + RainbowKit + Wagmi setup
 
 ### 2. Production Components
+
 **Updated:**
+
 - `WalletConnect.tsx` - RainbowKit integration (replaced fake MetaMask popup)
 - `GetTWUSDButton.tsx` - Real wallet-gated swap trigger
 - `SwapModal.tsx` - Full swap UI with quote, gas, slippage, TX tracking
 - `Footer.tsx` - Enhanced legal disclaimer (regulatory protection)
 
 **Main Page:**
+
 - `page.tsx` - Integrated all components with SwapModal state management
 - `layout.tsx` - Wrapped in Providers for Web3 context
 
 ### 3. Dependencies Installed
+
 ```json
 {
   "@rainbow-me/rainbowkit": "^2.2.10",
@@ -42,6 +48,7 @@ Successfully transformed `theusdox.com` from static brochure to **production-rea
 ```
 
 ### 4. Configuration
+
 - Downgraded Next.js 16 → 14.2.21 (stable for RainbowKit)
 - React 19 → 18.3.1 (wagmi compatibility)
 - Configured `next.config.js` with webpack externals for Web3 libs
@@ -52,9 +59,11 @@ Successfully transformed `theusdox.com` from static brochure to **production-rea
 ## 🔧 REMAINING MANUAL STEPS
 
 ### Step 1: Fix Node Modules Issue
+
 The build fails because `node_modules` isn't being populated correctly due to peer dependency conflicts.
 
 **Solution:**
+
 ```powershell
 # Clean everything
 Remove-Item -Recurse -Force node_modules, package-lock.json, .next
@@ -70,7 +79,9 @@ npm run build
 ```
 
 ### Step 2: If Build Still Fails
+
 Check that `postcss.config.js` exists and contains:
+
 ```js
 module.exports = {
   plugins: {
@@ -81,6 +92,7 @@ module.exports = {
 ```
 
 ### Step 3: Deploy to Vercel
+
 ```powershell
 # Login
 vercel login
@@ -99,12 +111,14 @@ vercel --prod
 
 ## 🎨 USER EXPERIENCE FLOW
 
-### Before (Static Site):
+### Before (Static Site)
+
 1. User clicks "Get TWUSD"
 2. Redirected to external Uniswap link
 3. No branding, no control, poor UX
 
-### After (Real DApp):
+### After (Real DApp)
+
 1. User clicks "Swap for TWUSD"
 2. Wallet connect modal (RainbowKit) appears
 3. User connects wallet (MetaMask / Coinbase / Trust)
@@ -117,6 +131,7 @@ vercel --prod
 10. Success state with "Make Another Swap" button
 
 **Mobile-optimized:**
+
 - Touch-safe buttons (min-height: 48px)
 - Bottom sheet modal on mobile
 - No hover-only interactions
@@ -127,6 +142,7 @@ vercel --prod
 ## 🛡️ LEGAL COMPLIANCE
 
 ### Footer Disclaimer (NON-NEGOTIABLE)
+
 ```
 TWUSD is NOT USDT. TWUSD is NOT affiliated with Tether, Circle, or any fiat currency issuer.
 
@@ -140,6 +156,7 @@ accept that swaps are executed via third-party decentralized exchanges (Uniswap)
 ```
 
 This protects against:
+
 - SEC claims of unregistered securities
 - Trademark infringement (Tether/Circle)
 - Misleading advertising
@@ -160,33 +177,36 @@ This protects against:
 
 ## 📊 TWUSD TOKEN FACTS
 
-| Property | Value |
-|----------|-------|
-| **Contract** | `0x7BeB51807E3c8BdB10A2868bD51c2D9E1764925D` |
-| **Network** | Ethereum Mainnet (Chain ID: 1) |
-| **Decimals** | 6 |
-| **Supply** | 33.2 Billion |
-| **Standard** | ERC-20 |
-| **Swap Sources** | ETH, USDT, USDC → TWUSD |
-| **Router** | Uniswap V3 Smart Order Router |
+| Property         | Value                                              |
+| ---------------- | -------------------------------------------------- |
+| **Contract**     | `0x7BeB51807E3c8BdB10A2868bD51c2D9E1764925D`   |
+| **Network**      | Ethereum Mainnet (Chain ID: 1)                     |
+| **Decimals**     | 6                                                  |
+| **Supply**       | 33.2 Billion                                       |
+| **Standard**     | ERC-20                                             |
+| **Swap Sources** | ETH, USDT, USDC → TWUSD                            |
+| **Router**       | Uniswap V3 Smart Order Router                      |
 
 ---
 
 ## 🚀 NEXT PHASE RECOMMENDATIONS
 
 ### Phase 3: Analytics & Monitoring
+
 - Add Plausible Analytics (privacy-friendly)
 - Track swap success rate
 - Monitor wallet connection rate
 - Gas price alerts
 
 ### Phase 4: Advanced Features
+
 - Price charts (TradingView widget)
 - Swap history (wallet-specific)
 - Portfolio tracker (TWUSD balance + USD value)
 - Multi-chain support (BSC, Tron when ready)
 
 ### Phase 5: Content & Trust
+
 - Create `TWUSD_Factsheet.pdf` (for Etherscan verification)
 - Add FAQ page
 - Create "How to Buy TWUSD" guide
@@ -196,7 +216,7 @@ This protects against:
 
 ## 📁 PROJECT STRUCTURE (FINAL)
 
-```
+```plaintext
 usdox-landing/
 ├─ src/
 │  ├─ app/
@@ -250,12 +270,14 @@ usdox-landing/
 ## 🎯 SUCCESS CRITERIA
 
 **Before this rebuild:**
+
 - ❌ Static buttons linking to external Uniswap
 - ❌ No wallet integration
 - ❌ No brand control
 - ❌ No legal protection
 
 **After this rebuild:**
+
 - ✅ Real Uniswap integration via AlphaRouter
 - ✅ RainbowKit wallet connection
 - ✅ Full swap UX in branded modal
@@ -283,10 +305,10 @@ usdox-landing/
 
 ## 🔗 RESOURCES
 
-- **Uniswap Docs:** https://docs.uniswap.org/sdk/v3/overview
-- **RainbowKit:** https://www.rainbowkit.com/docs/introduction
-- **Wagmi:** https://wagmi.sh/react/getting-started
-- **Permit2:** https://github.com/Uniswap/permit2
+- **Uniswap Docs:** <https://docs.uniswap.org/sdk/v3/overview>
+- **RainbowKit:** <https://www.rainbowkit.com/docs/introduction>
+- **Wagmi:** <https://wagmi.sh/react/getting-started>
+- **Permit2:** <https://github.com/Uniswap/permit2>
 
 ---
 

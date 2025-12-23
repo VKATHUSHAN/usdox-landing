@@ -1,15 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import Hero from "@/components/Hero";
-import WalletConnect from "@/components/WalletConnect";
-import TokenInfo from "@/components/TokenInfo";
-import RoutingSection from "@/components/RoutingSection";
-import TransparencySection from "@/components/TransparencySection";
-import USDOXCare from "@/components/USDOXCare";
-import Footer from "@/components/Footer";
-import SwapModal from "@/components/SwapModal";
-import GetTWUSDButton from "@/components/GetTWUSDButton";
+import Hero from "../components/Hero";
+import TokenInfo from "../components/TokenInfo";
+import RoutingSection from "../components/RoutingSection";
+import TransparencySection from "../components/TransparencySection";
+import USDOXCare from "../components/USDOXCare";
+import Footer from "../components/Footer";
+import SwapModal from "../components/SwapModal";
+import GetTWUSDButton from "../components/GetTWUSDButton";
 
 export default function Home() {
   const [isSwapModalOpen, setIsSwapModalOpen] = useState(false);
@@ -45,9 +44,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Wallet Connection */}
-      <WalletConnect />
 
       {/* Token Information */}
       <TokenInfo />
