@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  outputFileTracingRoot: __dirname,
+  // Disable Turbopack temporarily to fix Tailwind compatibility
+  experimental: {
+    turbo: undefined,
+  },
 };
 
 export default nextConfig;
