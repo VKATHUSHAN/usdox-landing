@@ -28,7 +28,7 @@ const features = [
 
 export default function TransparencySection() {
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-gray-900/30 to-transparent">
+    <section className="py-20 px-4 bg-linear-to-b from-gray-900/30 to-transparent">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -53,7 +53,7 @@ export default function TransparencySection() {
               className="bg-gray-900/50 backdrop-blur border border-gray-800 rounded-xl p-6 card-hover"
             >
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-blue-900/30 flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 rounded-lg bg-blue-900/30 flex items-center justify-center shrink-0">
                   <feature.icon className="text-2xl text-blue-400" />
                 </div>
                 <div>

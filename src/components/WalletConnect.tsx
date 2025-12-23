@@ -40,7 +40,7 @@ export default function WalletConnect() {
   }
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-transparent to-gray-900/30">
+    <section className="py-20 px-4 bg-linear-to-b from-transparent to-gray-900/30">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -74,7 +74,7 @@ export default function WalletConnect() {
                   <div className="text-sm text-gray-400 mb-1">Connected Address</div>
                   <div className="font-mono text-sm break-all">{address}</div>
                 </div>
-                <div className="bg-gradient-to-r from-blue-900/30 to-purple-900/30 rounded-lg p-6 border border-blue-800/30">
+                <div className="bg-linear-to-r from-blue-900/30 to-purple-900/30 rounded-lg p-6 border border-blue-800/30">
                   <div className="text-sm text-gray-400 mb-2">Your TWUSD Balance</div>
                   <div className="text-3xl font-bold text-blue-400">{balance}</div>
                 </div>
