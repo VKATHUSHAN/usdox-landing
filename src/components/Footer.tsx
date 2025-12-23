@@ -20,14 +20,27 @@ export default function Footer() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-8"
+          className="mb-8 pb-8 border-b border-gray-800"
         >
-          <h3 className="text-xl font-semibold mb-4 text-center">Legal & Branding Disclosure</h3>
-          <p className="text-sm text-gray-400 text-center max-w-3xl mx-auto">
-            TWUSD is not affiliated with Tether, USDT, Circle, or any third-party stablecoin issuer.
-            &quot;Wrapped Dollar&quot; refers solely to an internal ecosystem representation and does not imply
-            custodial claims or fiat backing.
-          </p>
+          <h3 className="text-xl font-semibold mb-4 text-center text-red-400">
+            Critical Legal Disclaimer
+          </h3>
+          <div className="space-y-3 text-sm text-gray-300 max-w-3xl mx-auto">
+            <p className="font-semibold">
+              TWUSD is NOT USDT. TWUSD is NOT affiliated with Tether, Circle, or any fiat currency issuer.
+            </p>
+            <p>
+              TWUSD does not promise redemption, backing, or any custodial services. 
+              It is a digital asset with no guarantee of price stability or value retention.
+            </p>
+            <p>
+              USDOXCARE is an informational project, not a financial issuer or custodian.
+            </p>
+            <p className="text-gray-500 text-xs">
+              By using this dApp, you acknowledge you understand the risks of DeFi protocols and 
+              accept that swaps are executed via third-party decentralized exchanges (Uniswap).
+            </p>
+          </div>
         </motion.div>
 
         <div className="flex flex-wrap justify-center gap-6 mb-8">
