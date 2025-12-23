@@ -145,7 +145,7 @@ public/
 
 ### After (Clear Action Path)
 
-```
+```text
 ┌────────────────────────────────┐
 │ TWUSD Technical Details        │
 │ Contract: 0x7beb... [Copy]     │
