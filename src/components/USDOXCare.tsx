@@ -11,7 +11,7 @@ export default function USDOXCare() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-br from-purple-900/20 to-blue-900/20 border border-purple-800/30 rounded-2xl p-12 text-center"
+          className="bg-linear-to-br from-purple-900/20 to-blue-900/20 border border-purple-800/30 rounded-2xl p-12 text-center"
         >
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
@@ -21,7 +21,7 @@ export default function USDOXCare() {
             className="mb-6"
           >
             <Image
-              src="/usdoxcare-logo.png"
+              src="/branding/usdoxcare-logo.png"
               alt="USDOXCARE Logo"
               width={80}
               height={80}

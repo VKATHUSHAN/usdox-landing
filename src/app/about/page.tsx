@@ -91,7 +91,7 @@ export default function AboutPage() {
             In a market filled with over-engineered stablecoins and opaque monetary models, TheUSDOX takes a different path — one rooted in <strong className="text-white">simplicity, clarity, and responsibility</strong>.
           </p>
 
-          <div className="bg-gradient-to-br from-blue-900/30 to-blue-800/20 rounded-xl p-8 border-2 border-blue-700/40">
+          <div className="bg-linear-to-br from-blue-900/30 to-blue-800/20 rounded-xl p-8 border-2 border-blue-700/40">
             <h2 className="text-2xl font-bold mb-6">Our Philosophy</h2>
             <div className="space-y-4">
               <div className="flex items-start space-x-4">
@@ -148,7 +148,7 @@ export default function AboutPage() {
 
       {/* Vision Section */}
       <section className="py-16 px-6 max-w-6xl mx-auto fade-in-section" id="vision">
-        <div className={`bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-12 border border-gray-700 text-center transition-all duration-1000 ${isVisible.vision ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+        <div className={`bg-linear-to-br from-gray-900 to-gray-800 rounded-xl p-12 border border-gray-700 text-center transition-all duration-1000 ${isVisible.vision ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
           <h2 className="text-3xl font-bold mb-6">Our Vision</h2>
           <p className="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
             To become a trusted on-chain dollar standard — built not on promises, but on <strong className="text-white">publicly verifiable truth</strong>.
