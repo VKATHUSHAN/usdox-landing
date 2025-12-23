@@ -113,9 +113,7 @@ public/
 
 ### **Accessed Via:**
 
-```
-https://yourdomain.com/TWUSD_Overview.md
-```
+<https://www.theusdox.com/TWUSD_Overview.md>
 
 ### **Contains:**
 
@@ -138,14 +136,12 @@ https://yourdomain.com/TWUSD_Overview.md
 
 ### Before (No Action Path)
 
-```
 ┌──────────────────────────┐
 │ TWUSD exists!            │
 │ Contract: 0x7beb...      │
 │                          │
 │ ❓ Now what?             │
 └──────────────────────────┘
-```
 
 ### After (Clear Action Path)
 
