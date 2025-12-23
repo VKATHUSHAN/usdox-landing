@@ -67,7 +67,7 @@ export default function RoutingSection() {
                   <span className="font-bold text-xl">TWUSD</span>
                 </div>
               </div>
-              <div className={`h-2 rounded-full bg-gradient-to-r ${route.color} opacity-50`} />
+              <div className={`h-2 rounded-full bg-linear-to-r ${route.color} opacity-50`} />
             </motion.div>
           ))}
         </div>

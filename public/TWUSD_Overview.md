@@ -1,6 +1,6 @@
 # TWUSD Overview
 
-**TheUSDOX Wrapped Dollar (EVM)**
+## TheUSDOX Wrapped Dollar (EVM)
 
 ---
 
@@ -41,7 +41,7 @@ All TWUSD parameters are publicly verifiable on Ethereum:
 - ✅ Observable supply and token behavior
 - ✅ Standard ERC-20 conventions
 
-**Verify Contract:** https://etherscan.io/address/0x7BeB51807E3c8BdB10A2868bD51c2D9E1764925D
+**Verify Contract:** <https://etherscan.io/address/0x7BeB51807E3c8BdB10A2868bD51c2D9E1764925D>
 
 ---
 
@@ -57,10 +57,10 @@ All TWUSD parameters are publicly verifiable on Ethereum:
 
 ## Contact & Resources
 
-- **Website:** https://theusdox.com
-- **GitHub:** https://github.com/VKATHUSHAN
+- **Website:** <https://theusdox.com>
+- **GitHub:** <https://github.com/VKATHUSHAN>
 - **Twitter/X:** @TheUSDOXs
-- **Email:** hello@theusdox.com
+- **Email:** <hello@theusdox.com>
 
 ---
 

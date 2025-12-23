@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-950/20 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-b from-blue-950/20 to-transparent pointer-events-none" />
       
       <motion.div
         initial={{ opacity: 0, y: 20 }}
