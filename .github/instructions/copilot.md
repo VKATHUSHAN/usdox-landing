@@ -1,8 +1,8 @@
 # ✅ COPILOT STRICT EXECUTION INSTRUCTIONS
 
-### Project: **theusdox-landing**
+## Project: **theusdox-landing**
 
-### Mode: **Production-Ready / No Experiments**
+## Mode: **Production-Ready / No Experiments**
 
 ---
 
@@ -57,7 +57,7 @@ NO OTHER DEPENDENCIES.
 
 Copilot must work with this structure:
 
-```
+```plaintext
 src/
 └─ app/
    ├─ index.html (PRIMARY - static landing page)
@@ -77,33 +77,38 @@ public/
 The file already contains all required sections. Copilot **MUST preserve**:
 
 ### 1️⃣ Hero Section
+
 * Title: "USDOX Ecosystem"
 * Subtitle: "Transparent Digital Dollar Infrastructure on Ethereum"
 * Logo references: `assets/logos/theusdox2-usdo-logo.png`, `assets/logos/TWUSD2-logo.png`
 * Etherscan link to contract
 
 ### 2️⃣ Token Information Section
+
 * **Exact values** (DO NOT CHANGE):
-  - Token Name: TheUSDOX Wrapped Dollar
-  - Symbol: TWUSD
-  - Network: Ethereum Mainnet
-  - Contract: `0x7BeB51807E3c8BdB10A2868bD51c2D9E1764925D`
-  - Decimals: 6
-  - Standard: ERC-20
+  * Token Name: TheUSDOX Wrapped Dollar
+  * Symbol: TWUSD
+  * Network: Ethereum Mainnet
+  * Contract: `0x7BeB51807E3c8BdB10A2868bD51c2D9E1764925D`
+  * Decimals: 6
+  * Standard: ERC-20
 
 ### 3️⃣ Live Dashboard (Web3 Integration)
+
 * Connect Wallet button using ethers.js
 * Display totalSupply() on page load
 * Display balanceOf() after wallet connection
 * Format with 6 decimals: `ethers.formatUnits(value, 6)`
 
 ### 4️⃣ Supported Routing (Visual Only)
+
 * ETH → TWUSD
 * USDT → TWUSD  
 * USDC → TWUSD
 * Disclaimer: "under development, no liquidity guarantees"
 
 ### 5️⃣ Legal & Branding Disclosure
+
 * Not affiliated with Tether/Circle
 * "Wrapped Dollar" = internal ecosystem term
 
