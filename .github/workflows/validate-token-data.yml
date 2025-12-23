@@ -1,0 +1,95 @@
+name: 🔒 Token Data Validation
+
+on:
+  push:
+    branches: [main, develop]
+    paths:
+      - 'contracts/**/*.json'
+      - 'tokens/**/*.json'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'contracts/**/*.json'
+      - 'tokens/**/*.json'
+
+jobs:
+  validate-json:
+    name: Validate Token Configuration
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 🔍 Validate JSON Files
+        id: validate
+        run: |
+          echo "## 🔒 Token Data Validation Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          JSON_VALID=true
+
+          for json_file in $(find contracts tokens -name "*.json" -type f 2>/dev/null || true); do
+            echo "Validating: $json_file"
+
+            # 1️⃣ Basic JSON validity check
+            if jq empty "$json_file" 2>/dev/null; then
+              echo "✅ Valid JSON: $json_file" >> $GITHUB_STEP_SUMMARY
+            else
+              echo "❌ Invalid JSON: $json_file" >> $GITHUB_STEP_SUMMARY
+              JSON_VALID=false
+              continue
+            fi
+
+            # 2️⃣ TWUSD decimals check — ONLY token-info.json
+            if [[ "$json_file" == *"twusd"* && "$json_file" == *"token-info.json"* ]]; then
+              decimals=$(jq -r '.decimals // empty' "$json_file")
+
+              if [ -z "$decimals" ]; then
+                echo "  ❌ TWUSD decimals missing" >> $GITHUB_STEP_SUMMARY
+                JSON_VALID=false
+              elif [ "$decimals" = "6" ]; then
+                echo "  ✅ TWUSD decimals correct: $decimals" >> $GITHUB_STEP_SUMMARY
+              else
+                echo "  ❌ TWUSD decimals incorrect: $decimals (expected: 6)" >> $GITHUB_STEP_SUMMARY
+                JSON_VALID=false
+              fi
+            fi
+          done
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ "$JSON_VALID" = "false" ]; then
+            echo "json_validation=failed" >> $GITHUB_OUTPUT
+            echo "### ❌ Validation Failed" >> $GITHUB_STEP_SUMMARY
+            exit 1
+          else
+            echo "json_validation=passed" >> $GITHUB_OUTPUT
+            echo "### ✅ All Token Data Valid" >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: 🎯 Verify TWUSD Contract Address
+        run: |
+          echo "## 🎯 Contract Address Verification" >> $GITHUB_STEP_SUMMARY
+          
+          EXPECTED_ADDRESS="0x7BeB51807E3c8BdB10A2868bD51c2D9E1764925D"
+          ACTUAL_ADDRESS=$(jq -r '.contractAddress' tokens/twusd/token-info.json)
+          
+          if [ "$ACTUAL_ADDRESS" = "$EXPECTED_ADDRESS" ]; then
+            echo "✅ Contract address verified: $ACTUAL_ADDRESS" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ Contract address mismatch!" >> $GITHUB_STEP_SUMMARY
+            echo "  Expected: $EXPECTED_ADDRESS" >> $GITHUB_STEP_SUMMARY
+            echo "  Got: $ACTUAL_ADDRESS" >> $GITHUB_STEP_SUMMARY
+            exit 1
+          fi
+
+      - name: 📊 Display Token Summary
+        if: success()
+        run: |
+          echo "## 📊 TWUSD Token Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Property | Value |" >> $GITHUB_STEP_SUMMARY
+          echo "|----------|-------|" >> $GITHUB_STEP_SUMMARY
+          
+          jq -r 'to_entries | map("| \(.key) | \(.value) |") | .[]' tokens/twusd/token-info.json >> $GITHUB_STEP_SUMMARY

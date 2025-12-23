@@ -1,0 +1,13 @@
+{
+  "name": "TWUSD",
+  "symbol": "TWUSD",
+  "decimals": 6,
+  "totalSupply": "33200000000",
+  "network": "Ethereum",
+  "standard": "ERC-20",
+  "contractAddress": "0x7BeB51807E3c8BdB10A2868bD51c2D9E1764925D",
+  "description": "TheUSDOX Wrapped Dollar - Ethereum-native utility token for DeFi interactions",
+  "category": "Utility Token",
+  "verified": true,
+  "etherscanUrl": "https://etherscan.io/token/0x7BeB51807E3c8BdB10A2868bD51c2D9E1764925D"
+}
