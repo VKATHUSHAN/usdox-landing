@@ -65,8 +65,9 @@ export default function SwapModal({ isOpen, onClose }: SwapModalProps) {
     setError("");
 
     try {
-      const provider = new ethers.BrowserProvider(walletClient as any);
-      const signer = await provider.getSigner();
+      // ethers v5 API
+      const provider = new ethers.providers.Web3Provider(walletClient as any);
+      const signer = provider.getSigner();
 
       const swapService = getSwapService();
       const hash = await swapService.executeSwap(quote.route, signer);

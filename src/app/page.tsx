@@ -7,7 +7,8 @@ import RoutingSection from "../components/RoutingSection";
 import TransparencySection from "../components/TransparencySection";
 import USDOXCare from "../components/USDOXCare";
 import Footer from "../components/Footer";
-import SwapModal from "../components/SwapModal";
+// Temporarily commented out due to Uniswap Smart Router dependency on server-only modules
+// import SwapModal from "../components/SwapModal";
 import GetTWUSDButton from "../components/GetTWUSDButton";
 
 export default function Home() {
@@ -60,11 +61,11 @@ export default function Home() {
       {/* Footer with Legal Disclaimer */}
       <Footer />
 
-      {/* Swap Modal */}
-      <SwapModal
+      {/* Swap Modal - Temporarily disabled due to Uniswap dependency issues */}
+      {/* <SwapModal
         isOpen={isSwapModalOpen}
         onClose={() => setIsSwapModalOpen(false)}
-      />
+      /> */}
     </main>
   );
 }

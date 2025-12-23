@@ -1,4 +1,6 @@
-export { TWUSD_TOKEN, WETH_TOKEN, USDT_TOKEN, USDC_TOKEN } from "./config";
+import { TWUSD_TOKEN, WETH_TOKEN, USDT_TOKEN, USDC_TOKEN } from "./config";
+
+export { TWUSD_TOKEN, WETH_TOKEN, USDT_TOKEN, USDC_TOKEN };
 
 export const SUPPORTED_TOKENS = {
   ETH: WETH_TOKEN,
