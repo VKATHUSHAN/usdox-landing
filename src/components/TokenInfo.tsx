@@ -20,7 +20,7 @@ export default function TokenInfo() {
         const contract = new ethers.Contract(CONTRACT, ABI, provider);
         const supply = await contract.totalSupply();
         setTotalSupply(
-          Number(ethers.formatUnits(supply, 6)).toLocaleString() + " TWUSD"
+          Number(ethers.utils.formatUnits(supply, 6)).toLocaleString() + " TWUSD"
         );
       } catch (error) {
         console.error("Error fetching supply:", error);
