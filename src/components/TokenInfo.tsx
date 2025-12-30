@@ -16,12 +16,21 @@ export default function TokenInfo() {
   useEffect(() => {
     async function fetchSupply() {
       try {
-        const provider = ethers.getDefaultProvider("homestead");
-        const contract = new ethers.Contract(CONTRACT, ABI, provider);
+        const provider = (ethers as any).getDefaultProvider
+          ? (ethers as any).getDefaultProvider("homestead")
+          : ethers.getDefaultProvider("homestead");
+        const contract = new (ethers as any).Contract(CONTRACT, ABI, provider);
         const supply = await contract.totalSupply();
-        setTotalSupply(
-          Number(ethers.utils.formatUnits(supply, 6)).toLocaleString() + " TWUSD"
-        );
+        const formatUnits = (value: any, decimals = 18) => {
+          if ((ethers as any).utils && (ethers as any).utils.formatUnits) {
+            return (ethers as any).utils.formatUnits(value, decimals);
+          }
+          if ((ethers as any).formatUnits) {
+            return (ethers as any).formatUnits(value, decimals);
+          }
+          return value.toString();
+        };
+        setTotalSupply(Number(formatUnits(supply, 6)).toLocaleString() + " TWUSD");
       } catch (error) {
         console.error("Error fetching supply:", error);
         setTotalSupply("Error loading");
