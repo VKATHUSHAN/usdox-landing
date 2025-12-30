@@ -177,15 +177,15 @@ This protects against:
 
 ## 📊 TWUSD TOKEN FACTS
 
-| Property         | Value                                            |
-| ---------------- | ------------------------------------------------ |
+| Property         | Value                                          |
+| ---------------- | ---------------------------------------------- |
 | **Contract**     | `0x7BeB51807E3c8BdB10A2868bD51c2D9E1764925D` |
-| **Network**      | Ethereum Mainnet (Chain ID: 1)                   |
-| **Decimals**     | 6                                                |
-| **Supply**       | 33.2 Billion                                     |
-| **Standard**     | ERC-20                                           |
-| **Swap Sources** | ETH, USDT, USDC → TWUSD                          |
-| **Router**       | Uniswap V3 Smart Order Router                    |
+| **Network**      | Ethereum Mainnet (Chain ID: 1)                 |
+| **Decimals**     | 6                                              |
+| **Supply**       | 33.2 Billion                                   |
+| **Standard**     | ERC-20                                         |
+| **Swap Sources** | ETH, USDT, USDC → TWUSD                        |
+| **Router**       | Uniswap V3 Smart Order Router                  |
 
 ---
 
