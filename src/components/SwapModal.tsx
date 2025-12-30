@@ -65,20 +65,15 @@ export default function SwapModal({ isOpen, onClose }: SwapModalProps) {
     setError("");
 
     try {
-      // Support both ethers v6 (BrowserProvider) and ethers v5 (Web3Provider)
-      let signer: any;
-      if ((ethers as any).BrowserProvider) {
-        const provider = new (ethers as any).BrowserProvider(walletClient as any);
-        // BrowserProvider.getSigner() may be async in some environments
-        signer = await provider.getSigner();
-      } else {
-        const provider = new (ethers as any).providers.Web3Provider(walletClient as any);
-        signer = provider.getSigner();
+      // Use ethers v6 BrowserProvider (require wallet extension like MetaMask)
+      if (typeof window === "undefined" || !(window as any).ethereum) {
+        throw new Error("No injected web3 provider found (window.ethereum). Please connect a wallet.");
       }
+      const provider = new ethers.BrowserProvider((window as any).ethereum);
+      const signer = await provider.getSigner();
 
       const swapService = getSwapService();
-      // executeSwap expects an ethers.Signer from v5; cast to any to allow v6 signers
-      const hash = await swapService.executeSwap(quote.route, signer as any);
+      const hash = await swapService.executeSwap(quote.route, signer);
 
       setTxHash(hash);
       setQuote(null);
