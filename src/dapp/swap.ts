@@ -14,10 +14,10 @@ export interface SwapQuote {
 
 export class SwapService {
   private router: AlphaRouter;
-  private provider: ethers.providers.JsonRpcProvider;
+  private provider: any;
 
   constructor(rpcUrl: string) {
-    this.provider = new ethers.providers.JsonRpcProvider(rpcUrl);
+    this.provider = new (ethers as any).JsonRpcProvider(rpcUrl);
     this.router = new AlphaRouter({
       chainId: CHAIN_ID,
       provider: this.provider as any,
@@ -31,9 +31,10 @@ export class SwapService {
   ): Promise<SwapQuote> {
     try {
       // Convert amount to token units
+      const parseUnits = (ethers as any).utils?.parseUnits ?? (ethers as any).parseUnits;
       const amountIn = CurrencyAmount.fromRawAmount(
         inputToken,
-        ethers.utils.parseUnits(amount, inputToken.decimals).toString()
+        parseUnits(amount, inputToken.decimals).toString()
       );
 
       // Get route from Uniswap
@@ -59,10 +60,9 @@ export class SwapService {
       // Format output
       const amountOut = route.quote.toExact();
       const gasEstimate = route.estimatedGasUsed.toString();
+      const formatEther = (ethers as any).utils?.formatEther ?? (ethers as any).formatEther;
       const gasCostUSD = route.gasPriceWei
-        ? ethers.utils.formatEther(
-            route.estimatedGasUsed.mul(route.gasPriceWei)
-          )
+        ? formatEther(route.estimatedGasUsed.mul(route.gasPriceWei))
         : "0";
 
       return {
