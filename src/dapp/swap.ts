@@ -60,7 +60,7 @@ export class SwapService {
       const amountOut = route.quote.toExact();
       const gasEstimate = route.estimatedGasUsed.toString();
       const gasCostUSD = route.gasPriceWei
-        ? ethers.formatEther(route.estimatedGasUsed.mul(route.gasPriceWei))
+        ? ethers.formatEther(route.estimatedGasUsed.mul(route.gasPriceWei).toString())
         : "0";
 
       return {
