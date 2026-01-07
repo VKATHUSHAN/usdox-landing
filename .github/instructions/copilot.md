@@ -113,6 +113,7 @@ The file already contains all required sections. Copilot **MUST preserve**:
 * "Wrapped Dollar" = internal ecosystem term
 
 ### 6️⃣ Footer
+
 * Copyright © 2025 TheUSDOX
 * Links: Website, Telegram, GitHub, X, Contact
 
